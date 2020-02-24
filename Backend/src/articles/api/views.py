@@ -2,7 +2,11 @@ from rest_framework import viewsets
 from articles.models import Article
 from .serializers import ArticleSerializer
 
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
 
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
 
 class ArticleViewSet(viewsets.ModelViewSet):
     """
