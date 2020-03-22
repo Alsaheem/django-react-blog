@@ -6,9 +6,7 @@ router = DefaultRouter()
 router.register(r'', ArticleViewSet, basename='articles')
 urlpatterns = router.urls
 
-urlpatterns += [
-  path('rest-auth/facebook/',FacebookLogin.as_view()),
-]
+
 
 # from django.urls import path
 # from .views import ArticleListView,ArticleDetailView,ArticleCreateView,ArticleUpdateView,ArticleDeleteView
